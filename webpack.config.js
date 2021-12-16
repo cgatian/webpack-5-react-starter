@@ -1,10 +1,3 @@
-// module.exports = {
-//   output: {
-//     filename: 'main.js',
-//     path: path.resolve(__dirname, 'dist'),
-//   },
-// };
-
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
@@ -13,6 +6,7 @@ module.exports = (env, options) => {
     entry: './src/main.tsx',
     target: 'web',
     mode: 'development',
+    watch: true,
     module: {
       rules: [
         {
@@ -39,11 +33,6 @@ module.exports = (env, options) => {
       ],
     },
     resolve: { extensions: ['.tsx', '.ts', '.js'] },
-    // output: {
-    //     filename: "js/[name].bundle.js",
-    //     path: path.resolve(__dirname, outputConfig.destPath),
-    //     publicPath: "",
-    // },
     output: {
       filename: 'main.bundle.js',
       path: path.resolve(__dirname, 'dist'),
